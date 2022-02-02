@@ -19,7 +19,7 @@ key = (letter) => {
         console.log(string);
         for (i = 0; i < 4; i++) {
             if (string[i] != undefined) {
-                document.getElementById("guess" + guess + "char" + i).innerHTML = string[i];
+                document.getElementById("guess" + guess + "char" + i).innerHTML = "<p>"+string[i]+"</p>";
             }
         }
         if (string.length == 4) {
@@ -56,7 +56,7 @@ key = (letter) => {
                 if (guess == 5) {
                     finished = true;
                     console.log("lose");
-                    document.getElementById("gameEndMessage").innerHTML = "o musi ala. sina jo ala e alasa nimi";
+                    document.getElementById("gameEndMessage").innerHTML = "o musi ala. sina jo ala e alasa nimi.";
                 }
             } else {
                 string = "";

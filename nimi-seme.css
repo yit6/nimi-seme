@@ -11,13 +11,17 @@ body {
 }
 
 .guess {
-	width: 1em;
-	height: 1em;
+	width: 2em;
+	height: 2em;
 	border-radius: .0625em;
 	background-color: white;
-	font-size: 400%;
+	font-size: 200%;
 	margin: 0em;
 	text-align: center;
+}
+
+.guess p {
+	margin-top: .4em;
 }
 
 .keyRow {
@@ -34,6 +38,7 @@ body {
 	border: white;
 	float: left;
 	margin: .25em;
+	vertical-align: middle;
 }
 
 #gameEndMessage {
