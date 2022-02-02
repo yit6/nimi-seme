@@ -23,7 +23,7 @@ body {
 .keyRow {
 	margin: auto;
 	width: fit-content;
-	height: fit-content;
+	height: 4em;
 }
 
 .key {
@@ -34,4 +34,9 @@ body {
 	border: white;
 	float: left;
 	margin: .25em;
+}
+
+#gameEndMessage {
+	text-align: center;
+	color: white;
 }

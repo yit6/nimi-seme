@@ -29,6 +29,7 @@ key = (letter) => {
                     document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#55FF55";
                 }
                 finished = true;
+                document.getElementById("gameEndMessage").innerHTML = "pona a! sina sona e nimi ni!"
             } else if (words.includes(string)) {
                 temp = target.split("");
                 string = string.split("");
@@ -54,7 +55,8 @@ key = (letter) => {
                 guess += 1;
                 if (guess == 5) {
                     finished = true;
-                    final();
+                    console.log("lose");
+                    document.getElementById("gameEndMessage").innerHTML = "o musi ala. sina jo ala e alasa nimi";
                 }
             } else {
                 string = "";
@@ -64,10 +66,6 @@ key = (letter) => {
             }
         }
     }
-}
-
-final = () => {
-
 }
 
 guess = 0;
