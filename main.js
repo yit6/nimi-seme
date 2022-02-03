@@ -19,7 +19,7 @@ key = (letter) => {
         console.log(string);
         for (i = 0; i < 4; i++) {
             if (string[i] != undefined) {
-                document.getElementById("guess" + guess + "char" + i).innerHTML = "<p>"+string[i]+"</p>";
+                document.getElementById("guess" + guess + "char" + i).innerHTML = "<p>" + string[i] + "</p>";
             }
         }
         if (string.length == 4) {
@@ -34,11 +34,11 @@ key = (letter) => {
                 temp = target.split("");
                 string = string.split("");
                 for (i = 0; i < 4; i++) {
-                    if (string[i]===target[i]) {
+                    if (string[i] === target[i]) {
                         console.log(i);
                         document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#55FF55";
-                        string[i]=" ";
-                        temp[i]=" ";
+                        string[i] = " ";
+                        temp[i] = " ";
                     }
                 }
                 for (i = 0; i < 4; i++) {
@@ -50,7 +50,12 @@ key = (letter) => {
                         }
                     }
                 }
-                console.log(string,temp);
+                for (i = 0; i < 4; i++) {
+                    if (string[i] != " ") {
+                        document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#BBBBBB";
+                    }
+                }
+                console.log(string, temp);
                 string = "";
                 guess += 1;
                 if (guess == 3) {
@@ -73,8 +78,8 @@ string = "";
 finished = false;
 console.log(words);
 date = new Date("2/7/22");
-seed = date.getDate()+""+date.getMonth()+""+date.getFullYear();
+seed = date.getDate() + "" + date.getMonth() + "" + date.getFullYear();
 for (let i = 0; i < 64; i++) {
-    seed = String(seed*seed).substr(3,6);
+    seed = String(seed * seed).substr(3, 6);
 }
-target = words[seed%words.length];
+target = words[seed % words.length];
