@@ -37,6 +37,7 @@ key = (letter) => {
                     if (string[i] === target[i]) {
                         console.log(i);
                         document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#55FF55";
+                        document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor = "#55FF55";
                         string[i] = " ";
                         temp[i] = " ";
                     }
@@ -45,6 +46,7 @@ key = (letter) => {
                     if (string[i] != " ") {
                         if (temp.includes(string[i])) {
                             document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#FFFF00";
+                            document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor = "#FFFF00";
                             temp[temp.indexOf(string[i])] = " ";
                             string[i] = " ";
                         }
@@ -53,8 +55,11 @@ key = (letter) => {
                 for (i = 0; i < 4; i++) {
                     if (string[i] != " ") {
                         document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#999";
-                        console.log("key-"+string[i].toLowerCase());
-                        document.getElementById("key-"+string[i].toLowerCase()).style.backgroundColor = "#999";
+                        console.log("key-" + string[i].toLowerCase());
+                        console.log(string[i], document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor);
+                        if (document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor == "") {
+                            document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor = "#999";
+                        }
                     }
                 }
                 console.log(string, temp);
@@ -81,7 +86,8 @@ finished = false;
 console.log(words);
 date = new Date("2/7/22");
 seed = date.getDate() + "" + date.getMonth() + "" + date.getFullYear();
-for (let i = 0; i < 64; i++) {
-    seed = String(seed * seed).substr(3, 6);
+for (let i = 0; i < 1024; i++) {
+    seed = String(seed * seed).substring(3, 6);
 }
-target = words[seed % words.length];
+target = "KALA"
+//target = words[seed % words.length];
