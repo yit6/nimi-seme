@@ -53,7 +53,7 @@ key = (letter) => {
                 console.log(string,temp);
                 string = "";
                 guess += 1;
-                if (guess == 5) {
+                if (guess == 3) {
                     finished = true;
                     console.log("lose");
                     document.getElementById("gameEndMessage").innerHTML = "o musi ala. sina jo ala e alasa nimi.";
