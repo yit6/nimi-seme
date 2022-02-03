@@ -56,7 +56,7 @@ key = (letter) => {
                 if (guess == 3) {
                     finished = true;
                     console.log("lose");
-                    document.getElementById("gameEndMessage").innerHTML = "o musi ala. sina jo ala e alasa nimi.";
+                    document.getElementById("gameEndMessage").innerHTML = "musi li pini. sina jo ala e alasa nimi.";
                 }
             } else {
                 string = "";
