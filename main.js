@@ -72,6 +72,12 @@ key = (letter) => {
                 }
             } else {
                 string = "";
+                document.getElementById("gameEndMessage").innerHTML = "nimi ni li insa ala e nimi ali.";
+                setTimeout(() => {
+                    if (document.getElementById("gameEndMessage").innerHTML == "nimi ni li insa ala e nimi ali") {
+                        document.getElementById("gameEndMessage").innerHTML = "";
+                    }
+                }, 3000);
                 for (i = 0; i < 4; i++) {
                     document.getElementById("guess" + guess + "char" + i).innerHTML = "";
                 }
@@ -89,5 +95,4 @@ seed = date.getDate() + "" + date.getMonth() + "" + date.getFullYear();
 for (let i = 0; i < 1024; i++) {
     seed = String(seed * seed).substring(3, 6);
 }
-target = "KALA"
-//target = words[seed % words.length];
+target = words[seed % words.length];
