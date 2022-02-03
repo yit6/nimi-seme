@@ -72,4 +72,9 @@ guess = 0;
 string = "";
 finished = false;
 console.log(words);
-target = "MOLI";
+date = new Date("2/7/22");
+seed = date.getDate()+""+date.getMonth()+""+date.getFullYear();
+for (let i = 0; i < 64; i++) {
+    seed = String(seed*seed).substr(3,6);
+}
+target = words[seed%words.length];
