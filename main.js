@@ -52,7 +52,9 @@ key = (letter) => {
                 }
                 for (i = 0; i < 4; i++) {
                     if (string[i] != " ") {
-                        document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#BBBBBB";
+                        document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#999";
+                        console.log("key-"+string[i].toLowerCase());
+                        document.getElementById("key-"+string[i].toLowerCase()).style.backgroundColor = "#999";
                     }
                 }
                 console.log(string, temp);
