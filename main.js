@@ -12,6 +12,7 @@ document.getElementById("key-m").onclick = () => { key("m") };
 document.getElementById("key-j").onclick = () => { key("j") };
 document.getElementById("key-l").onclick = () => { key("l") };
 document.getElementById("key-w").onclick = () => { key("w") };
+document.getElementById("key-back").onclick = () => { back() };
 
 key = (letter) => {
     if (!finished) {
@@ -76,6 +77,13 @@ key = (letter) => {
                 }
             }
         }
+    }
+}
+
+back = () => {
+    if (string != "") {
+        document.getElementById("guess" + guess + "char" + (string.length - 1)).innerHTML = "";
+        string = string.substring(0, string.length - 1);
     }
 }
 
