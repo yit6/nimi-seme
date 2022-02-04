@@ -41,6 +41,16 @@ body {
 	vertical-align: middle;
 }
 
+.keyboard {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
 #gameEndMessage {
 	text-align: center;
 	color: white;
