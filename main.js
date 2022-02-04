@@ -16,7 +16,6 @@ document.getElementById("key-w").onclick = () => { key("w") };
 key = (letter) => {
     if (!finished) {
         string += letter.toUpperCase();
-        console.log(string);
         for (i = 0; i < 4; i++) {
             if (string[i] != undefined) {
                 document.getElementById("guess" + guess + "char" + i).innerHTML = "<p>" + string[i] + "</p>";
@@ -24,7 +23,6 @@ key = (letter) => {
         }
         if (string.length == 4) {
             if (string === target) {
-                console.log("win");
                 for (i = 0; i < 4; i++) {
                     document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#55FF55";
                 }
@@ -35,7 +33,6 @@ key = (letter) => {
                 string = string.split("");
                 for (i = 0; i < 4; i++) {
                     if (string[i] === target[i]) {
-                        console.log(i);
                         document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#55FF55";
                         document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor = "#55FF55";
                         string[i] = " ";
@@ -55,19 +52,15 @@ key = (letter) => {
                 for (i = 0; i < 4; i++) {
                     if (string[i] != " ") {
                         document.getElementById("guess" + guess + "char" + i).style.backgroundColor = "#999";
-                        console.log("key-" + string[i].toLowerCase());
-                        console.log(string[i], document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor);
                         if (document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor == "") {
                             document.getElementById("key-" + string[i].toLowerCase()).style.backgroundColor = "#999";
                         }
                     }
                 }
-                console.log(string, temp);
                 string = "";
                 guess += 1;
                 if (guess == 3) {
                     finished = true;
-                    console.log("lose");
                     document.getElementById("gameEndMessage").innerHTML = "musi li pini. sina jo ala e alasa nimi.";
                 }
             } else {
@@ -89,8 +82,7 @@ key = (letter) => {
 guess = 0;
 string = "";
 finished = false;
-console.log(words);
-date = new Date("2/7/22");
+date = new Date();
 seed = date.getDate() + "" + date.getMonth() + "" + date.getFullYear();
 for (let i = 0; i < 1024; i++) {
     seed = String(seed * seed).substring(3, 6);
