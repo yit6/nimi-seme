@@ -14,6 +14,12 @@ document.getElementById("key-l").onclick = () => { key("l") };
 document.getElementById("key-w").onclick = () => { key("w") };
 document.getElementById("key-back").onclick = () => { back() };
 
+document.addEventListener("keydown", e => {
+    if (letters.includes(e.key)) {
+        key(e.key);
+    }
+});
+
 key = (letter) => {
     if (!finished) {
         string += letter.toUpperCase();

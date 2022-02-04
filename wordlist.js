@@ -66,3 +66,5 @@ words=[
 "WEKA",
 "WILE"
 ]
+
+letters = ["a","e","i","o","u","s","t","p","m","n","l","j","k","w"];
